@@ -210,15 +210,15 @@
 // 782 -> 2
 // 918 -> 8
 
-// string? number;
-// Console.WriteLine("Задача №7. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает последнюю цифру этого числа.");
-// Console.Write("Введите трехзначное число: ");
-// number = Console.ReadLine();
-// if (number != null && number.Length == 3)
-// {
-//     Console.WriteLine(number + " -> " + number[2]);    
-// }
-// else
-// {
-//     Console.WriteLine("Неверно указано число");
-// }
+ string? number;
+ Console.WriteLine("Задача №7. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает последнюю цифру этого числа.");
+ Console.Write("Введите трехзначное число: ");
+ number = Console.ReadLine();
+ if (number != null && number.Length == 3)
+ {
+     Console.WriteLine(number + " -> " + number[2]);    
+ }
+ else
+ {
+     Console.WriteLine("Неверно указано число");
+ }
