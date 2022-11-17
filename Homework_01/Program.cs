@@ -4,14 +4,14 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
-// int first;
-// int second;
-// Console.WriteLine("Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.");
-// Console.Write("Введите число 1: ");
-// first = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите число 2: ");
-// second = Convert.ToInt32(Console.ReadLine());
-// Console.Write("a = " + first + " b = " + second + " -> max = " + Math.Max(first,second));
+int first;
+int second;
+Console.WriteLine("Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.");
+Console.Write("Введите число 1: ");
+first = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число 2: ");
+second = Convert.ToInt32(Console.ReadLine());
+Console.Write("a = " + first + " b = " + second + " -> max = " + Math.Max(first,second));
 
 
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
@@ -210,15 +210,15 @@
 // 782 -> 2
 // 918 -> 8
 
- string? number;
- Console.WriteLine("Задача №7. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает последнюю цифру этого числа.");
- Console.Write("Введите трехзначное число: ");
- number = Console.ReadLine();
- if (number != null && number.Length == 3)
- {
-     Console.WriteLine(number + " -> " + number[2]);    
- }
- else
- {
-     Console.WriteLine("Неверно указано число");
- }
+ // string? number;
+ // Console.WriteLine("Задача №7. Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает последнюю цифру этого числа.");
+ // Console.Write("Введите трехзначное число: ");
+ // number = Console.ReadLine();
+ // if (number != null && number.Length == 3)
+ // {
+ //     Console.WriteLine(number + " -> " + number[2]);    
+ // }
+ // else
+ // {
+ //     Console.WriteLine("Неверно указано число");
+ // }
