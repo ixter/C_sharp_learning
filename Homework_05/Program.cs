@@ -134,18 +134,20 @@ public class Homework_05
     static int[] GenerateArray(int num = 5, int from = -999, int to = 1000)
     {
         var arr = new int[num];
+        var random = new Random();
             for (var i = 0; i < num; i++)
             {
-                arr[i] = new Random().Next(from, to);
+                arr[i] = random.Next(from, to);
             }
             return arr;
     } 
     static double[] generateArrayDoubles(int num = 5, int from = -999, int to = 1000)
     {
         var arr = new double[num];
+        var random = new Random();
             for (var i = 0; i < num; i++)
             {
-                arr[i] = new Random().Next(from, to) + new Random().NextDouble();
+                arr[i] = random.Next(from, to) + random.NextDouble();
             }
             return arr;
     }
