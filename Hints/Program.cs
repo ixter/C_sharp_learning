@@ -153,6 +153,97 @@ int firstVar(int a, int b) // функция нам вернёт INT(число)
     return s; // вернём цифру 7 из функции 
 }
 
+// рандом чисел
+var rand = new Random();  // создаём облачко случайных чисел
+
+var chisloSluchainoe = rand.Next(1, 99); // используем наше облачко и говорим ему создай нам число от 1 до 99
+
+var chisloSluchainoeSZapyatoi = rand.NextDouble(); // используем наше облачко и говорим ему создай нам дробное число
 
 
+// Ключевое слово namespace используется для объявления области действия, которая содержит набор связанных объектов.
+// Пространство имен можно использовать для организации элементов кода и для создания глобально уникальных типов.
+namespace Homework_06; 
 
+public static class Homework06  // основной класс в котором мы будем работать
+{
+    public static void Main() // та функция которая будет запускаться
+    {
+        // вот тут пишутся запускаемые функции и код
+    }
+    
+    
+    // тут мы объявляем функции (создаём их)
+    
+    
+} // за этими скобками ничего работать не будет
+
+
+// создаём двойной массив 
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+int[,] tableArray = new int[,] { { 1, 4, 7, 2 }, { 5, 9, 2, 3 }, { 8, 4, 2, 4 } };
+
+double[,] tableArrayDouble = new double[,] { { 1.1, 4.2, 7.5, 2.7 }, { 5.2, 9.5, 2.7, 3.9 }, { 8, 4, 2, 4 } };
+
+string[,] tableArraysStrings = 
+    new string[,] { 
+    { "строка0 столбец0", "строка0 столбец1", "строка0 столбец2", "строка0 столбец3" },
+    { "строка1 столбец0", "строка1 столбец1", "строка1 столбец2", "строка1 столбец3" },
+    { "строка2 столбец0", "строка2 столбец1", "строка2 столбец2", "строка2 столбец3" } 
+    };
+
+
+/// <summary>
+///  Выводим в консоль двумерный массив
+/// </summary>
+/// <param name="generatedTable"></param>
+public static void PrintDoubleTable(double[,] generatedTable)
+{
+    for (int i = 0; i < generatedTable.GetLength(0); i++)
+    {
+        for (int j = 0; j < generatedTable.GetLength(1); j++)
+        {
+            Console.Write($"{String.Format("{0:0.#}", generatedTable[i, j])} ");
+        }
+
+        Console.WriteLine();
+    }
+}
+
+
+/// <summary>
+/// Функция получает текст и просит ввести данные в строку через запятую или пробел
+/// </summary>
+/// <param name="outputText"></param>
+/// <returns></returns>
+public static int[] GetEnteredNumbers(string outputText = "", bool inline = false)
+{
+    var arrayInts = Array.Empty<int>();
+    if (inline)
+        Console.Write(outputText);
+    else
+        Console.WriteLine(outputText);
+
+    char[] separators = { ' ', ',' };
+    var arrayOfEnteredText = Console.ReadLine()
+        ?.Split(separators,
+            StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    if (arrayOfEnteredText != null)
+        arrayInts = Array.ConvertAll(arrayOfEnteredText, s => int.Parse(s));
+
+    return arrayInts;
+}
+
+/// <summary>
+///  Печатаем полученный массив типа double
+/// </summary>
+/// <param name="array"></param>
+public static void PrintArrayDouble(double[] array)
+{
+    foreach (var item in array)
+    {
+        Console.Write($"{String.Format("{0:0.#}", item)} ");
+    }
+}
