@@ -25,4 +25,35 @@ public class Menu
 
         Console.WriteLine();
     }
+    
+    public static int WorkingMenu(string[] menuItems)
+    {
+        Console.WriteLine("Меню");
+        Console.WriteLine();
+
+        var row = Console.CursorTop;
+        var col = Console.CursorLeft;
+        var index = 0;
+        while (true)
+        {
+            // для разообразия выкинул в отдельный класс
+            DrawMenu(menuItems, row, col, index);
+            switch (Console.ReadKey(true).Key)
+            {
+                case ConsoleKey.DownArrow:
+                    if (index < menuItems.Length - 1)
+                        index++;
+                    Console.Clear();
+                    break;
+                case ConsoleKey.UpArrow:
+                    if (index > 0)
+                        index--;
+                    Console.Clear();
+                    break;
+                case ConsoleKey.Enter:
+                    return index;
+            }
+        }
+    } 
+    
 }
