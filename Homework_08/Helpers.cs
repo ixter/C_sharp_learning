@@ -237,11 +237,12 @@ public class Helpers
         return multipleArray;
     }
 
-    public static string[,] GenerateArraySpiral()
+    public static string[,] GenerateArraySpiral(int[] arrRowCol)
     {
-        var initialArray = new[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16" };
-        string[,] spiralArray = new string [4, 4];
-        int x = 0, y = 0, xMax = 3, yMax = 3, indexInitialArray = 0;
+        string[,] spiralArray = new string [arrRowCol[0], arrRowCol[1]];
+        var initialArray = GenerateLinearArray(spiralArray.GetLength(0)*spiralArray.GetLength(1));
+        // var initialArray = new[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16" };
+        int x = 0, y = 0, xMax = spiralArray.GetLength(1)-1, yMax = spiralArray.GetLength(0)-1, indexInitialArray = 0;
         string direction = "right";
         for (int i = 0; i < initialArray.Length; i++)
         {
@@ -263,6 +264,15 @@ public class Helpers
         // ! 03 13 23 33 !     
     }
 
+    static string[] GenerateLinearArray(int lengthArr)
+    {
+        var strArr = new string [lengthArr]; 
+        for (int i = 1; i <= lengthArr; i++)
+        {
+            strArr[i-1] = (i < 10 ? "0" :"") + i.ToString();
+        }
+        return strArr;
+    }
     static (string,int,int) CheckAction(string[,] spiralArray,string direction,int x, int y,int xMax,int yMax)
     {
         if (direction == "right")

@@ -129,8 +129,13 @@ public static class Homework08
     {
         Console.WriteLine(
             "Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.");
-        var spiralArray = Helpers.GenerateArraySpiral();
-        Helpers.PrintTableString(spiralArray);
+        var numbersArray = Helpers.GetEnteredNumbers("Укажите 1 число для строк от 4," +
+                                                     " второе количество столбцов от 4: ", true);
+        if (numbersArray.Length >= 2 && numbersArray[0] >= 4 && numbersArray[1] >= 4)
+        {
+            var spiralArray = Helpers.GenerateArraySpiral(numbersArray);
+            Helpers.PrintTableString(spiralArray);
+        }
     }
     
 }
