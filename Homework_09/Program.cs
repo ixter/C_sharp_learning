@@ -36,7 +36,7 @@ public static class Homework09
                           " Выполнить с помощью рекурсии.");
 
         int[] valueN = Helpers.GetEnteredNumbers("Задайте значение N через пробел или запятую: ", true);
-        if (valueN.Length >= 1)
+        if (valueN.Length >= 1 && valueN[0] > 0)
             Helpers.RecursionN(valueN[0]);
         else
             Console.WriteLine("Введено не корректное значение(Пример: 5)");
