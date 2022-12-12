@@ -50,7 +50,7 @@ public static class Homework09
         Console.WriteLine("Задача 66: Задайте значения M и N. Напишите программу, " +
                           "которая найдёт сумму натуральных элементов в промежутке от M до N.");
         int[] valueN = Helpers.GetEnteredNumbers("Задайте значения M и N через пробел или запятую: ", true);
-        if (valueN.Length >= 2)
+        if (valueN.Length >= 2 && valueN[0] > 0 && valueN[1] > 0)
         {
             int result = Helpers.SumBetweenMn(valueN[0], valueN[1]);
             Console.WriteLine($"M = {valueN[0]}; N = {valueN[1]} -> {result}");
