@@ -4,3 +4,29 @@
     + "выполнения алгоритма. При решении но рекомендуется пользоваться коллекциями, лучше обойтись \n"
     + "исключительно массивами.");
 Console.WriteLine();
+var gettext = GetAnyArray("Введите элементы массива через пробел или запятую -> ", true);
+
+string[] GetAnyArray(string outputText = "", bool inline = false)
+{
+    var arrays = Array.Empty<string>();
+    if (inline)
+        Console.Write(outputText);
+    else
+        Console.WriteLine(outputText);
+    try
+    {
+        char[] separators = { ' ', ',' };
+        var arrayOfEnteredText = Console.ReadLine()
+            ?.Split(separators,
+                StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        if (arrayOfEnteredText != null)
+            arrays = Array.ConvertAll(arrayOfEnteredText, s => s);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+        throw;
+    }
+
+    return arrays;
+}
