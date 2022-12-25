@@ -5,6 +5,21 @@
     + "исключительно массивами.");
 Console.WriteLine();
 var gettext = GetAnyArray("Введите элементы массива через пробел или запятую -> ", true);
+var text = SelectLessThreeCharText(gettext);
+
+string[] SelectLessThreeCharText(string[] arr)
+{
+    string[] text = Array.Empty<string>();
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length <= 3)
+        {
+            Array.Resize(ref text, text.Length + 1);
+            text[text.Length - 1] = "\"" + arr[i] + "\"";
+        }
+    }
+    return text;
+}
 
 string[] GetAnyArray(string outputText = "", bool inline = false)
 {
