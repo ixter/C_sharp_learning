@@ -6,6 +6,17 @@
 Console.WriteLine();
 var gettext = GetAnyArray("Введите элементы массива через пробел или запятую -> ", true);
 var text = SelectLessThreeCharText(gettext);
+gettext = GetStringArrayQuotes(gettext);
+Console.Write($"[{String.Join(", ", gettext)}] -> [{String.Join(", ", text)}]");
+
+string[] GetStringArrayQuotes(string[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = "\"" + arr[i] + "\"";
+    }
+    return arr;
+}
 
 string[] SelectLessThreeCharText(string[] arr)
 {
